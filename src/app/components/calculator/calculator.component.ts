@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss']
 })
-export class CalculatorComponent implements OnInit {
+export class CalculatorComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public equation = '0';
+
+  public pressNumbers(enteredNumber: string): void {
+    this.equation = enteredNumber;
   }
 
+  public buttonClickedOpertions(enteredOperation: string): void {
+    this.equation = enteredOperation;
+  }
+
+  public equator(): void {
+    this.equation = 'pressed';
+  }
 }

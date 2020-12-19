@@ -1,1 +1,50 @@
-<p>calculator works!</p>
+<div class="page">
+  <div class="page-heading">Calculator Application</div>
+
+  <div class="page-content">
+    <mat-card class="calculator-container">
+      <div class="header">
+        Calculator
+      </div>
+      <div class="screen-area">
+        <div class="displayed">
+          {{ equation }}
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="row m-1">
+          <button mat-button class="btn" (click)="buttonClickedOpertions('%')">%</button>
+          <button mat-button class="btn" (click)="buttonClickedOpertions('CE')">CE</button>
+          <button mat-button class="btn" (click)="buttonClickedOpertions('C')">C</button>
+          <button mat-button class="btn" (click)="buttonClickedOpertions('BCK')">
+            <mat-icon>backspace</mat-icon>
+          </button>
+        </div>
+        <div class="row m-1">
+          <button mat-button class="btn black" (click)="pressNumbers('7')">7</button>
+          <button mat-button class="btn black" (click)="pressNumbers('8')">8</button>
+          <button mat-button class="btn black" (click)="pressNumbers('9')">9</button>
+          <button mat-button class="btn" (click)="buttonClickedOpertions('/')"> / </button>
+        </div>
+        <div class="row m-1">
+          <button mat-button class="btn black" (click)="pressNumbers('4')">4</button>
+          <button mat-button class="btn black" (click)="pressNumbers('5')">5</button>
+          <button mat-button class="btn black" (click)="pressNumbers('6')">6</button>
+          <button mat-button class="btn" (click)="buttonClickedOpertions('*')"> * </button>
+        </div>
+        <div class="row m-1">
+          <button mat-button class="btn black" (click)="pressNumbers('1')">1</button>
+          <button mat-button class="btn black" (click)="pressNumbers('2')">2</button>
+          <button mat-button class="btn black" (click)="pressNumbers('3')">3</button>
+          <button mat-button class="btn" (click)="buttonClickedOpertions('-')"> - </button>
+        </div>
+        <div class="row m-1">
+          <button mat-button class="btn" (click)="pressNumbers('.')">.</button>
+          <button mat-button class="btn black" (click)="pressNumbers('0')">0</button>
+          <button mat-button class="btn" (click)="equator()"> = </button>
+          <button mat-button class="btn" (click)="buttonClickedOpertions('+')"> + </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
