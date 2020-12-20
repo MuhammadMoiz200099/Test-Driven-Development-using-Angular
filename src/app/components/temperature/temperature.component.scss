@@ -1,0 +1,36 @@
+.page-content {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+
+  mat-card {
+    width: 550px;
+
+    mat-card-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .parent-answer-box {
+        width: 100%;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-height: 250px;
+
+        .answer-box {
+          font-size: 72px;
+          font-weight: 600;
+        }
+      }
+
+    }
+  }
+}

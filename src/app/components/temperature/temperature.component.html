@@ -1,0 +1,45 @@
+<div class="page">
+  <div class="page-heading">Celsius and Fahrenheit Conversion</div>
+  <div class="page-content">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Celsius to Fahrenheit</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="m-1">
+          <mat-form-field color="warn">
+            <mat-label>Enter the value</mat-label>
+            <input matInput [formControl]="celsiusControl" type="number" autocomplete="off">
+          </mat-form-field>
+          <button mat-raised-button color="warn" class="ml-4" (click)="conversionFahrenheit()">Covert</button>
+          <button mat-button class="ml-4" (click)="clearFahrenheit()">Clear</button>
+        </div>
+        <div class="parent-answer-box">
+          <div class="answer-box">
+            {{fahrenheit}}
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Fahrenheit to Celsius</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="m-1">
+          <mat-form-field color="warn">
+            <mat-label>Enter the value</mat-label>
+            <input matInput [formControl]="fahrenheitControl" type="number" autocomplete="off">
+          </mat-form-field>
+          <button mat-raised-button color="warn" class="ml-4" (click)="conversionCelsius()">Covert</button>
+          <button mat-button class="ml-4" (click)="clearCelsius()">Clear</button>
+        </div>
+        <div class="parent-answer-box">
+          <div class="answer-box">
+            {{celsius}}
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
