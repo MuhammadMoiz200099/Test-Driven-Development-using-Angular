@@ -24,6 +24,10 @@ exports.config = {
     defaultTimeoutInterval: 30000,
     print: function () { }
   },
+  suites: {
+    'platform-tests-calculator': './src/suites/calculator-component-spec.e2e-spec.ts',
+    'platform-tests-temperature': './src/suites/temperature-component-spec.e2e-spec.ts'
+  },
   onPrepare() {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')

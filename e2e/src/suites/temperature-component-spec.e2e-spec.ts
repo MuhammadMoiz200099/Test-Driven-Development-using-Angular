@@ -1,4 +1,4 @@
 
-describe('Platform TTD Tests For Temperature Program', () => {
+describe('Platform Tests Temperature', () => {
 
 });
