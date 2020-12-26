@@ -4,7 +4,7 @@
 
 // cmd :: protractor protractor.conf
 const { SpecReporter, StacktraceOption } = require('jasmine-spec-reporter');
-const { browser } = require('protractor');
+const protractor = require('protractor');
 
 /**
  * @type { import("protractor").Config }
@@ -16,7 +16,11 @@ exports.config = {
     './e2e/suites/temperature.e2e-spec.ts',
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    'chromeOptions': {
+
+      args: ['--no-sandbox']
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
@@ -26,7 +30,7 @@ exports.config = {
     defaultTimeoutInterval: 30000,
     print: function () { }
   },
-  onPrepare() {
+  async onPrepare() {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
