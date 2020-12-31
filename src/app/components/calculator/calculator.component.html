@@ -10,42 +10,42 @@
         <div class="equation">
           {{ equation }}
         </div>
-        <div class="result">
+        <div class="result" id="e2eResults">
           {{ result }}
         </div>
       </div>
       <div class="buttons">
         <div class="row m-1">
-          <button mat-button class="btn" (click)="buttonClickedOpertions('%')">%</button>
-          <button mat-button class="btn" (click)="buttonClickedOpertions('CE')">CE</button>
-          <button mat-button class="btn" (click)="buttonClickedOpertions('C')">C</button>
-          <button mat-button class="btn" (click)="buttonClickedOpertions('BCK')">
+          <button mat-button class="btn" id="e2eModuloButton" (click)="buttonClickedOpertions('%')">%</button>
+          <button mat-button class="btn" id="e2eCEButton" (click)="buttonClickedOpertions('CE')">CE</button>
+          <button mat-button class="btn" id="e2eCButton" (click)="buttonClickedOpertions('C')">C</button>
+          <button mat-button class="btn" id="e2eBCKButton" (click)="buttonClickedOpertions('BCK')">
             <mat-icon>backspace</mat-icon>
           </button>
         </div>
         <div class="row m-1">
-          <button mat-button class="btn black" (click)="pressNumbers('7')">7</button>
-          <button mat-button class="btn black" (click)="pressNumbers('8')">8</button>
-          <button mat-button class="btn black" (click)="pressNumbers('9')">9</button>
-          <button mat-button class="btn" (click)="buttonClickedOpertions('/')"> / </button>
+          <button mat-button class="btn black" id="e2eCalc7Button" (click)="pressNumbers('7')">7</button>
+          <button mat-button class="btn black" id="e2eCalc8Button" (click)="pressNumbers('8')">8</button>
+          <button mat-button class="btn black" id="e2eCalc9Button" (click)="pressNumbers('9')">9</button>
+          <button mat-button class="btn" id="e2eDivideButton" (click)="buttonClickedOpertions('/')"> / </button>
         </div>
         <div class="row m-1">
-          <button mat-button class="btn black" (click)="pressNumbers('4')">4</button>
-          <button mat-button class="btn black" (click)="pressNumbers('5')">5</button>
-          <button mat-button class="btn black" (click)="pressNumbers('6')">6</button>
-          <button mat-button class="btn" (click)="buttonClickedOpertions('*')"> * </button>
+          <button mat-button class="btn black" id="e2eCalc4Button" (click)="pressNumbers('4')">4</button>
+          <button mat-button class="btn black" id="e2eCalc5Button" (click)="pressNumbers('5')">5</button>
+          <button mat-button class="btn black" id="e2eCalc6Button" (click)="pressNumbers('6')">6</button>
+          <button mat-button class="btn" id="e2eMultiplicationButton" (click)="buttonClickedOpertions('*')"> * </button>
         </div>
         <div class="row m-1">
-          <button mat-button class="btn black" (click)="pressNumbers('1')">1</button>
-          <button mat-button class="btn black" (click)="pressNumbers('2')">2</button>
-          <button mat-button class="btn black" (click)="pressNumbers('3')">3</button>
-          <button mat-button class="btn" (click)="buttonClickedOpertions('-')"> - </button>
+          <button mat-button class="btn black" id="e2eCalc1Button" (click)="pressNumbers('1')">1</button>
+          <button mat-button class="btn black" id="e2eCalc2Button" (click)="pressNumbers('2')">2</button>
+          <button mat-button class="btn black" id="e2eCalc3Button" (click)="pressNumbers('3')">3</button>
+          <button mat-button class="btn" id="e2eSubtractionButton" (click)="buttonClickedOpertions('-')"> - </button>
         </div>
         <div class="row m-1">
-          <button mat-button class="btn" (click)="pressNumbers('.')">.</button>
-          <button mat-button class="btn black" (click)="pressNumbers('0')">0</button>
-          <button mat-button class="btn" (click)="equator()"> = </button>
-          <button mat-button class="btn" (click)="buttonClickedOpertions('+')"> + </button>
+          <button mat-button class="btn" id="e2eDotButton" (click)="pressNumbers('.')">.</button>
+          <button mat-button class="btn black" id="e2eCalc0Button" (click)="pressNumbers('0')">0</button>
+          <button mat-button class="btn" id="e2eEqualsButton" (click)="equator()"> = </button>
+          <button mat-button class="btn" id="e2eAdditionButton" (click)="buttonClickedOpertions('+')"> + </button>
         </div>
       </div>
     </mat-card>

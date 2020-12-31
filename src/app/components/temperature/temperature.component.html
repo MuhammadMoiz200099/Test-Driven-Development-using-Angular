@@ -9,13 +9,14 @@
         <div class="m-1">
           <mat-form-field color="warn">
             <mat-label>Enter the value</mat-label>
-            <input matInput [formControl]="celsiusControl" type="number" autocomplete="off">
+            <input matInput [formControl]="celsiusControl" id="e2eCelsiusInput" type="number" autocomplete="off">
           </mat-form-field>
-          <button mat-raised-button color="warn" class="ml-4" (click)="conversionFahrenheit()">Covert</button>
-          <button mat-button class="ml-4" (click)="clearFahrenheit()">Clear</button>
+          <button mat-raised-button color="warn" class="ml-4" id="e2eCelsiusConvertButton"
+            (click)="conversionFahrenheit()">Covert</button>
+          <button mat-button class="ml-4" id="e2eCelsiusClearButton" (click)="clearFahrenheit()">Clear</button>
         </div>
         <div class="parent-answer-box">
-          <div class="answer-box">
+          <div class="answer-box" id="e2eCelsiusAnswerBox">
             {{fahrenheit}}
           </div>
         </div>
@@ -29,13 +30,14 @@
         <div class="m-1">
           <mat-form-field color="warn">
             <mat-label>Enter the value</mat-label>
-            <input matInput [formControl]="fahrenheitControl" type="number" autocomplete="off">
+            <input matInput [formControl]="fahrenheitControl" id="e2eFahrenheitInput" type="number" autocomplete="off">
           </mat-form-field>
-          <button mat-raised-button color="warn" class="ml-4" (click)="conversionCelsius()">Covert</button>
-          <button mat-button class="ml-4" (click)="clearCelsius()">Clear</button>
+          <button mat-raised-button color="warn" class="ml-4" id="e2eFahrenheitConvertButton"
+            (click)="conversionCelsius()">Covert</button>
+          <button mat-button class="ml-4" id="e2eFahrenheitClearButton" (click)="clearCelsius()">Clear</button>
         </div>
         <div class="parent-answer-box">
-          <div class="answer-box">
+          <div class="answer-box" id="e2eFahrenheitAnswerBox">
             {{celsius}}
           </div>
         </div>
