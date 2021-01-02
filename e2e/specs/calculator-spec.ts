@@ -40,6 +40,7 @@ class CalculatorSpecs {
             const result = $('#e2eResults').getText();
             expect(result).toBe('4');
             browser.sleep(1000);
+            expect(true).toBeFalsy();
         });
     }
     public calculatorPerformAddtionOperation2() {
