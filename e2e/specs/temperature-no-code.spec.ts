@@ -1,21 +1,19 @@
 import { $, ExpectedConditions as EC, browser, Key } from 'protractor';
-// import { navigate } from '../e2e-helpers.service';
+import { condition } from '../e2e-helpers.service';
 
-class TemperatureSpecs {
+class TemperatureNoCodeInjectionSpecs {
+    private condition = '';
     public navigateToTemperature() {
         it('Should navigate to Temperature Tab', async () => {
-            // await navigate('/');
             const navbar = $('#e2eHeaderNav');
             browser.wait(EC.visibilityOf(navbar));
-            const temperatureTab = navbar.$('.temperature-button');
-            temperatureTab.click();
             browser.sleep(1000);
+            expect(condition(this.condition)).toBeTrue();
         });
     }
 
     public convertCelsiusToFahrenheit(value: number, expectValue: string) {
         it(`Should Convert Celsius ${value} to Fahrenheit ${expectValue}`, async () => {
-            browser.wait(EC.visibilityOf($('#e2eCelsiusInput')));
             $('#e2eCelsiusInput').sendKeys(value);
             $('#e2eCelsiusInput').sendKeys(Key.TAB);
             browser.sleep(500);
@@ -29,7 +27,6 @@ class TemperatureSpecs {
 
     public convertFahrenheitToCelsius(value: number, expectValue: string) {
         it(`Should Convert Fahrenheit ${value} to Celsius ${expectValue}`, async () => {
-            browser.wait(EC.visibilityOf($('#e2eFahrenheitInput')));
             $('#e2eFahrenheitInput').sendKeys(value);
             $('#e2eFahrenheitInput').sendKeys(Key.TAB);
             browser.sleep(500);
@@ -63,4 +60,4 @@ class TemperatureSpecs {
     }
 }
 
-export default new TemperatureSpecs();
+export default new TemperatureNoCodeInjectionSpecs();

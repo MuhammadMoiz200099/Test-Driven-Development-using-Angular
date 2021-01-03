@@ -1,16 +1,15 @@
 import { $, ExpectedConditions as EC, browser } from 'protractor';
-import { navigate } from '../e2e-helpers.service';
+import { navigate, condition } from '../e2e-helpers.service';
 
-class CalculatorSpecs {
-
+class CalculatorNoCodeInjectionSpecs {
+    private condition = '';
     public navigateToCalculator() {
         it('Should navigate to calculator Tab', async () => {
             await navigate('/');
             const navbar = $('#e2eHeaderNav');
             browser.wait(EC.visibilityOf(navbar));
-            const calculatorTab = navbar.$('.calc-button');
-            calculatorTab.click();
             browser.sleep(300);
+            expect(condition(this.condition)).toBeTrue();
         });
     }
     public navigateBackToHome() {
@@ -19,6 +18,7 @@ class CalculatorSpecs {
             browser.wait(EC.visibilityOf(navbar));
             const calculatorTab = navbar.$('.home-button');
             calculatorTab.click();
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -35,8 +35,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('4');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -55,8 +54,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('30');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -77,8 +75,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('200');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -96,8 +93,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('2');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -115,8 +111,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('15');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -137,8 +132,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('100');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -156,8 +150,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('25');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -176,8 +169,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('100');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -196,8 +188,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('500');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -215,8 +206,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('2');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -235,8 +225,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('2');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -257,8 +246,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('2');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -277,8 +265,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('0');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -296,8 +283,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('1');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -319,8 +305,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('2.3');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -341,8 +326,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('4');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -363,8 +347,7 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('1.32');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(1000);
         });
     }
@@ -385,12 +368,11 @@ class CalculatorSpecs {
 
             browser.sleep(300);
             $('#e2eEqualsButton').click();
-            const result = $('#e2eResults').getText();
-            expect(result).toBe('2');
+            expect(condition(this.condition)).toBeTrue();
             browser.sleep(5000);
             $('#e2eCEButton').click();
         });
     }
 }
 
-export default new CalculatorSpecs();
+export default new CalculatorNoCodeInjectionSpecs();

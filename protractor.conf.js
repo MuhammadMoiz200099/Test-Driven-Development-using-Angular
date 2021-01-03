@@ -11,8 +11,12 @@ const protractor = require('protractor');
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
-    './e2e/suites/calculator.e2e-spec.ts',
-    './e2e/suites/temperature.e2e-spec.ts',
+    // without code
+    './e2e/suites/calc-no-code.e2e-spec.ts',
+    './e2e/suites/temp-no-code.e2e-spec.ts',
+    // with code
+    // './e2e/suites/calculator.e2e-spec.ts',
+    // './e2e/suites/temperature.e2e-spec.ts',
   ],
   capabilities: {
     'browserName': 'chrome',
